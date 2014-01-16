@@ -21,16 +21,33 @@ o wrap in a xplatform gui toolkit?
 o show what keys exist
 o static help/about page
 o fix bug?
+o readme
 
 o 0.2 release!
+
+o github
+o verify build process buildable from repo
+o including minimal redo script "do"
+o fix bug?
+o test somewhere
+
+o 0.3 release
+
+o test everywhere
+o 0.9 release
+
+o fix bug, you know there's at least one
+o 1.0 release
+
+o tidy code
+o tidy repo?
+o fix bug?
+o 1.0.1 release
 
 o do we want keyhit animations?
 o do we want note-display mode?
 o do we want Fourier frequentogram view? pretty harmonics!
 o do we want nonspecific visualizer?
 
-o feature release!
-
-o fix bug?
-o 1.0 release?
+o feature release
 

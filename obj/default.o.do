@@ -2,7 +2,8 @@
 SOURCENAME="`find ../src -name "$2".c | head -1`"
 
 if [ -z "$SOURCENAME" ]; then
-	error "Can't find source for $1"
+	echo "Can't find source for $1" 1>&2
+	return 1
 fi
 
 gcc -o "$3" -c "$SOURCENAME"

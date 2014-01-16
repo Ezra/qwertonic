@@ -16,6 +16,9 @@ in long {
 	need _something_ for the window to contain {
 		at minimum, descriptive text
 	}
+	need to ensure availability of midi player (fluidsynth)
+	need to ensure availability of soundfont
+	need to properly set up & tear down midi pipeline
 }
 
 feature exts {

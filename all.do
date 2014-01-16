@@ -1,1 +1,1 @@
-redo-ifchange obj/qwertonic.o
+redo-ifchange out/qwertonic

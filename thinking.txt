@@ -7,3 +7,5 @@ am I more likely to regret writing this in C or in Python?
 (Haskell would be hilarious tho)
 http://hackage.haskell.org/package/fluidsynth-0.1.0.0
 (JS/JQuery would also be entertaining)
+
+current strategy: C unless and until I'm tired of it, Python next

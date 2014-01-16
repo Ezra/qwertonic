@@ -1,0 +1,30 @@
+spec for qwertonic keyboard desktop ver
+
+in short, do what the flash app on qwertonic.com does
+
+in long {
+	user run a desktop app
+	while it's in focus, app takes keys & plays notes
+	need to overcome keyboard's simultaneous-keys problem {
+		possibly sustain spacebar is enough?
+	}
+	need a way to exit conveniently {
+		platform standards should be fine,
+		as long as we stay far away from e.g. Cmd-Q, Alt-F4
+		is this a risk with sustain bar?
+	}
+	need _something_ for the window to contain {
+		at minimum, descriptive text
+	}
+}
+
+feature exts {
+	background ver?
+	fullscreen ver?
+	visualizer?
+	frequency visualizer for harmonics?
+	keyboard w pressing keys
+	keyboard w notes?
+	tutorial like web ver?
+	tutorial better than web ver?
+}

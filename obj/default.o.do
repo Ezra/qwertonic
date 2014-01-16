@@ -6,4 +6,5 @@ if [ -z "$SOURCENAME" ]; then
 	return 1
 fi
 
+redo-ifchange "$SOURCENAME"
 gcc -o "$3" -c "$SOURCENAME"

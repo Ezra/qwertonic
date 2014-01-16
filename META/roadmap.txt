@@ -9,7 +9,7 @@ extend idea: frequentogram display? or would that spoil training?
 todo:
 
 ✓ set up version control
-☐ set up building
+✓ set up building
 ☐ set up a call to FluidSynth
 ☐ map some keys to FluidSynth
 ☐ put up a token window

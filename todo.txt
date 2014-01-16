@@ -1,0 +1,36 @@
+project: downloadable Qwertonic
+
+concept, tuning:      http://www.qwertonic.com/
+backend:   FluidSynth http://www.fluidsynth.org/
+also, add a sustain spacebar
+extend idea: frequentogram display? or would that spoil training?
+
+
+todo:
+
+o set up version control
+o set up building
+o set up a call to FluidSynth
+o map some keys to FluidSynth
+o put up a token window
+o map matching Qwertonic
+
+o 0.1 release!
+
+o wrap in a xplatform gui toolkit?
+o show what keys exist
+o static help/about page
+o fix bug?
+
+o 0.2 release!
+
+o do we want keyhit animations?
+o do we want note-display mode?
+o do we want Fourier frequentogram view? pretty harmonics!
+o do we want nonspecific visualizer?
+
+o feature release!
+
+o fix bug?
+o 1.0 release?
+

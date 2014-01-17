@@ -1,10 +1,5 @@
 project: downloadable Qwertonic
 
-concept, tuning:      http://www.qwertonic.com/
-backend:   FluidSynth http://www.fluidsynth.org/
-also, add a sustain spacebar
-extend idea: frequentogram display? or would that spoil training?
-
 
 todo:
 

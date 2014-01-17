@@ -30,4 +30,5 @@ feature exts {
 	keyboard w notes?
 	tutorial like web ver?
 	tutorial better than web ver?
+	chroma-notes
 }

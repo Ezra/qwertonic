@@ -5,13 +5,12 @@ todo:
 
 ✓ set up version control
 ✓ set up building
-☐ shebang do scripts
-☐ set up a call to FluidSynth
-☐ map some keys to FluidSynth
+? set up a call to FluidSynth
+☐ map some keys to FluidSynth (necessary to test the preceding)
 ☐ put up a token window
-☐ map matching Qwertonic
+☐ make map be Qwertonic
 
-☐ 0.1 release!
+☐ 0.1 release to Qwertonic guy
 
 ☐ wrap in a xplatform gui toolkit?
 ☐ show what keys exist
@@ -19,9 +18,10 @@ todo:
 ☐ fix bug?
 ☐ readme
 
-☐ 0.2 release!
+☐ 0.2 release
 
 ☐ tidy do scripts
+☐ shebang do scripts
 ☐ github
 ☐ verify build process buildable from repo
 ☐ including minimal redo script "do"

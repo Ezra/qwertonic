@@ -8,4 +8,10 @@ am I more likely to regret writing this in C or in Python?
 http://hackage.haskell.org/package/fluidsynth-0.1.0.0
 (JS/JQuery would also be entertaining)
 
-current strategy: C unless and until I'm tired of it, Python next
+previous strategy: C unless and until I'm tired of it, Python next
+
+new plan: try making it out of qsynth in qt
+nope qsynth is too big to work from directly
+
+potentially useful: http://vmpk.sourceforge.net/
+virtual software keyboard, could be rearrangeable

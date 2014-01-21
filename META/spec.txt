@@ -16,9 +16,7 @@ in long {
 	need _something_ for the window to contain {
 		at minimum, descriptive text
 	}
-	need to ensure availability of midi player (fluidsynth)
-	need to ensure availability of soundfont
-	need to properly set up & tear down midi pipeline
+	need to satisfy deps
 }
 
 feature exts {
@@ -26,9 +24,11 @@ feature exts {
 	fullscreen ver?
 	visualizer?
 	frequency visualizer for harmonics?
-	keyboard w pressing keys
+	keyboard w pressing keys?
 	keyboard w notes?
 	tutorial like web ver?
 	tutorial better than web ver?
-	chroma-notes
+	register shift with shift?
+	chroma-notes?
+	fireworks or other pretty colors?
 }

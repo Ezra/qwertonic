@@ -5,9 +5,9 @@ todo:
 
 ✓ set up version control
 ✓ set up building
-? set up a call to FluidSynth
-☐ map some keys to FluidSynth (necessary to test the preceding)
-☐ put up a token window
+✓ set up playing a note
+☐ map some keys to notes
+☐ put up a token window (that's not the pyo builtin)
 ☐ make map be Qwertonic
 
 ☐ 0.1 release to Qwertonic guy
@@ -43,6 +43,7 @@ todo:
 
 ☐ do we want keyhit animations?
 ☐ do we want note-display mode?
+☐ do we want register shifting with shift?
 ☐ do we want Fourier frequentogram view? pretty harmonics!
 ☐ do we want nonspecific visualizer?
 

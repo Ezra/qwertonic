@@ -1,17 +1,5 @@
-
-this guy has python code
-https://github.com/sboosali/music/blob/master/etc/helloworld.fluidsynth.py
-
-am I more likely to regret writing this in C or in Python?
-(forget C++)
-(Haskell would be hilarious tho)
-http://hackage.haskell.org/package/fluidsynth-0.1.0.0
-(JS/JQuery would also be entertaining)
-
-previous strategy: C unless and until I'm tired of it, Python next
-
-new plan: try making it out of qsynth in qt
-nope qsynth is too big to work from directly
-
-potentially useful: http://vmpk.sourceforge.net/
-virtual software keyboard, could be rearrangeable
+yup got tired of C
+go go python!
+pyo does synth instead of midi, which should be excellent for Qwertonic purposes
+pyo is also actually working
+python also has actual time control

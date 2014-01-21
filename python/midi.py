@@ -6,6 +6,8 @@ By default it runs the output example.
 python midi.py --output
 python midi.py --input
 
+public domain
+
 """
 
 import sys

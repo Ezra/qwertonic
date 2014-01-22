@@ -1,8 +1,10 @@
 # redo timestamp database
 .redo/
 
+# separately source-controlled
+python/pyo/pyo-read-only
+
 # intermediate files
-obj/*.o
+*.pyc
 
 # products
-out/qwertonic

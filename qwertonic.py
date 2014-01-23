@@ -1,11 +1,21 @@
 #!/usr/bin/env python
-#an attempt at a simple keyboard-to-notes
+
+# qwertonic-py
+# a prototype implementation of the qwertonic keyboard
+# (http://www.qwertonic.com/)
+#
+# requires pyo
+# https://code.google.com/p/pyo/
+#
+# files: qwertonic.py (this file), music.py, getch.py
 
 from music import *
 import time
 from getch import getch
 
+print "qwertonic-py"
 s = musicServer()
+time.sleep(0.5)
 startServer(s)
 
 # http://www.seventhstring.com/resources/notefrequencies.html
@@ -58,12 +68,27 @@ key_mapping.update(make_key_mapping(['1','2','3','4','5','6','7','8','9','0','-'
               5*12+7))
 
 # play welcome tones
-time.sleep(2)
-notes[5*12+0].play()
-time.sleep(.2)
-notes[5*12+2].play()
-time.sleep(.2)
-notes[5*12+5].play()
+# (Sun's Song from Legend of Zelda)
+time.sleep(1)
+print "press keyboard keys to play music"
+print "press escape to quit"
+notes[5*12+9].play(); time.sleep(.2)
+notes[5*12+5].play(); time.sleep(.2)
+notes[6*12+2].play(); time.sleep(0.8)
+notes[5*12+9].play(); time.sleep(.2)
+notes[5*12+5].play(); time.sleep(.2)
+notes[6*12+2].play(); time.sleep(0.8)
+notes[5*12+9].play(); time.sleep(0.1)
+notes[6*12+0].play(); time.sleep(0.1)
+notes[6*12+2].play(); time.sleep(0.1)
+notes[6*12+4].play(); time.sleep(0.1)
+notes[6*12+5].play(); time.sleep(0.1)
+notes[6*12+7].play(); time.sleep(0.2)
+notes[6*12+7].play(); time.sleep(0.2)
+notes[6*12+7].play(); time.sleep(0.2)
+notes[6*12+7].play(); time.sleep(0.2)
+notes[6*12+7].play(); time.sleep(0.2)
+notes[6*12+7].play(); time.sleep(0.2)
 
 # main loop
 key=' '

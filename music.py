@@ -43,7 +43,9 @@ class note(object):
 
 def musicServer():
     '''Returns a music server'''
-    s = pyo.Server().boot()
+    s = pyo.Server()
+    s.setVerbosity(2)
+    s.boot()
     return s
 
 def startServer(server):

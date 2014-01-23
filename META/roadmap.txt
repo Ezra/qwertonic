@@ -9,8 +9,7 @@ todo:
 ✓ map some keys to notes
 ✓ make map be Qwertonic
 ☐ make key holds be right
-☐ print something
-
+✓ print something
 
 ☐ 0.1 release to Qwertonic guy
 

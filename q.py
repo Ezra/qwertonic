@@ -33,8 +33,31 @@ freqs = [16.35, 17.32, 18.35, 19.45, 20.60, 21.83, 23.12, 24.50, 25.96, 27.50, 2
          2093,  2217,  2349,  2489,  2637,  2794,  2960,  3136,  3322,  3520,  3729,  3951,
          4186,  4435,  4699,  4978,  5274,  5588,  5920,  6272,  6645,  7040,  7459,  7902]
 
+# oct*12+note
+# octaves: standard octave numbers from 0 to 8 (middle C and A are in row 4)
+# notes:
+#  C C#  D Eb  E  F F#  G G#  A Bb  B
+#  0  1  2  3  4  5  6  7  8  9 10 11
+
 notes = map((lambda frequency: note(frequency)), freqs)
 
+# Return a map from key to note
+def make_key_mapping(key_list, start_note_num):
+    mapping = {}
+    for i in range(len(key_list)):
+        mapping[key_list[i]] = notes[start_note_num+(2*i)]
+    return mapping
+
+key_mapping = make_key_mapping(['z','x','c','v','b','n','m',',','.','/'],
+              4*12+4)
+key_mapping.update(make_key_mapping(['a','s','d','f','g','h','j','k','l',';','\''],
+              4*12+9))
+key_mapping.update(make_key_mapping(['q','w','e','r','t','y','u','i','o','p','[',']'],
+              5*12+2))
+key_mapping.update(make_key_mapping(['1','2','3','4','5','6','7','8','9','0','-','='],
+              5*12+7))
+
+# play welcome tones
 time.sleep(2)
 notes[5*12+0].play()
 time.sleep(.2)
@@ -42,25 +65,7 @@ notes[5*12+2].play()
 time.sleep(.2)
 notes[5*12+5].play()
 
-def make_key_mapping(key_list, start_note_num):
-    """Return a dictionary of note by key"""
-    
-    mapping = {}
-    for i in range(len(key_list)):
-        mapping[key_list[i]] = notes[4*12+(2*i)%12]
-    return mapping
-
-key_mapping = make_key_mapping(['z','x','c','v','b','n','m',',','.','/'],
-              4*12+0)
-key_mapping.update(make_key_mapping(['q','w','e','r','t','y'],
-              4*12+0))
-
-# oct*12+note
-# octaves: standard octave numbers from 0 to 8 (middle C and A are in row 4)
-# notes:
-#  C C#  D Eb  E  F F#  G G#  A Bb  B
-#  0  1  2  3  4  5  6  7  8  9 10 11
-
+# main loop
 key=' '
 while ord(key) <> 27:
     key = getch()
@@ -83,5 +88,3 @@ while ord(key) <> 27:
         notes[5*12+5].play()
     elif key == 'h':
         notes[5*12+7].play()
-
-#guiMusicServer(s)

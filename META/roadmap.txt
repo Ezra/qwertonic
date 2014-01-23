@@ -7,7 +7,7 @@ todo:
 ✓ set up building
 ✓ set up playing a note
 ✓ map some keys to notes
-☐ make map be Qwertonic
+✓ make map be Qwertonic
 ☐ make key holds be right
 ☐ print something
 

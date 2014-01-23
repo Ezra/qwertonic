@@ -8,6 +8,9 @@ s = musicServer()
 startServer(s)
 
 # http://www.seventhstring.com/resources/notefrequencies.html
+# for greater precision (but slightly narrower on the ends),
+# see http://mdoege.github.io/PySynth/
+#
 #     C     C#    D     Eb    E     F     F#    G     G#    A     Bb    B
 #   0 16.35 17.32 18.35 19.45 20.60 21.83 23.12 24.50 25.96 27.50 29.14 30.87
 #   1 32.70 34.65 36.71 38.89 41.20 43.65 46.25 49.00 51.91 55.00 58.27 61.74

@@ -51,7 +51,9 @@ def make_key_mapping(key_list, start_note):
     return mapping
 
 key_mapping = make_key_mapping(['z','x','c','v','b','n','m',',','.','/'],
-                               notes[4][0])
+              notes[4][0])
+key_mapping.update(make_key_mapping(['q','w','e','r','t','y'],
+              notes[4][0]))
 
 # rows: standard octave numbers (middle C and A are in row 4)
 # rows run from 0 to 8

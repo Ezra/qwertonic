@@ -3,6 +3,7 @@
 # qwertonic-py
 # a prototype implementation of the qwertonic keyboard
 # (http://www.qwertonic.com/)
+# ver 0.1
 #
 # requires pyo
 # https://code.google.com/p/pyo/
@@ -21,6 +22,8 @@ startServer(s)
 # http://www.seventhstring.com/resources/notefrequencies.html
 # for greater precision (but slightly narrower on the ends),
 # see http://mdoege.github.io/PySynth/
+# for general formula,
+# see http://www.phy.mtu.edu/~suits/NoteFreqCalcs.html
 #
 #     C     C#    D     Eb    E     F     F#    G     G#    A     Bb    B
 #   0 16.35 17.32 18.35 19.45 20.60 21.83 23.12 24.50 25.96 27.50 29.14 30.87

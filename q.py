@@ -33,27 +33,54 @@ freqs = [[16.35, 17.32, 18.35, 19.45, 20.60, 21.83, 23.12, 24.50, 25.96, 27.50, 
          [2093,  2217,  2349,  2489,  2637,  2794,  2960,  3136,  3322,  3520,  3729,  3951],
          [4186,  4435,  4699,  4978,  5274,  5588,  5920,  6272,  6645,  7040,  7459,  7902]]
 
-octaves = map(lambda octave: map(lambda frequency: note(frequency), octave), freqs)
-notes = octaves[5]
+notes = map(lambda octave: map(lambda frequency: note(frequency), octave), freqs)
 
 time.sleep(2)
-notes[0].play()
+notes[5][0].play()
 time.sleep(.2)
-notes[2].play()
+notes[5][2].play()
 time.sleep(.2)
-notes[5].play()
+notes[5][5].play()
+
+def make_key_mapping(key_list, start_note):
+    """Return a dictionary of note by key"""
+    
+    mapping = {}
+    for i in range(len(key_list)):
+        mapping[key_list[i]] = notes[4][(2*i)%12]
+    return mapping
+
+key_mapping = make_key_mapping(['z','x','c','v','b','n','m',',','.','/'],
+                               notes[4][0])
+
+# rows: standard octave numbers (middle C and A are in row 4)
+# rows run from 0 to 8
+#
+# cols:
+#  C C#  D Eb  E  F F#  G G#  A Bb  B
+#  0  1  2  3  4  5  6  7  8  9 10 11
 
 key=' '
 while ord(key) <> 27:
-	key = getch()
-	print key,
-	if key == 'd':
-		notes[1].play()
-	elif key == 'f':
-		notes[3].play()
-	elif key == 'g':
-		notes[5].play()
-	elif key == 'h':
-		notes[7].play()
+    key = getch()
+    print key,
+    try:
+        note = key_mapping[key]
+    except KeyError:
+        pass
+    else:
+        note.play()
+    if key == 'a':
+        notes[4][9].play()
+    elif key == 's':
+        notes[4][11].play()
+    elif key == 'd':
+        notes[5][1].play()
+    elif key == 'f':
+        notes[5][3].play()
+    elif key == 'g':
+        notes[5][5].play()
+    elif key == 'h':
+        notes[5][7].play()
 
 #guiMusicServer(s)

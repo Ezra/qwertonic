@@ -6,12 +6,14 @@ todo:
 ✓ set up version control
 ✓ set up building
 ✓ set up playing a note
-☐ map some keys to notes
-☐ put up a token window (that's not the pyo builtin)
+✓ map some keys to notes
 ☐ make map be Qwertonic
+☐ print something
+
 
 ☐ 0.1 release to Qwertonic guy
 
+☐ put up a token window (that's not the pyo builtin)
 ☐ wrap in a xplatform gui toolkit?
 ☐ show what keys exist
 ☐ static help/about page

@@ -3,6 +3,7 @@
 
 from music import *
 import time
+from getch import getch
 
 s = musicServer()
 startServer(s)
@@ -35,11 +36,24 @@ freqs = [[16.35, 17.32, 18.35, 19.45, 20.60, 21.83, 23.12, 24.50, 25.96, 27.50, 
 octaves = map(lambda octave: map(lambda frequency: note(frequency), octave), freqs)
 notes = octaves[5]
 
-time.sleep(1)
+time.sleep(2)
 notes[0].play()
-time.sleep(1)
+time.sleep(.2)
 notes[2].play()
-time.sleep(1)
-notes[0].play()
+time.sleep(.2)
+notes[5].play()
 
-guiMusicServer(s)
+key=' '
+while ord(key) <> 27:
+	key = getch()
+	print key,
+	if key == 'd':
+		notes[1].play()
+	elif key == 'f':
+		notes[3].play()
+	elif key == 'g':
+		notes[5].play()
+	elif key == 'h':
+		notes[7].play()
+
+#guiMusicServer(s)

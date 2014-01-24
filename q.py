@@ -108,6 +108,28 @@ class QwertonicKeyboard:
 
     def _pressed(self, event):
         self.pressed[event.char] = True
+        key = event.char
+        print key,
+        try:
+            note = key_mapping[key]
+        except KeyError:
+            pass
+        else:
+            note.play()
+        if key == 'a':
+            notes[4*12+9].play()
+        elif key == 's':
+            notes[4*12+11].play()
+        elif key == 'd':
+            notes[5*12+1].play()
+        elif key == 'f':
+            notes[5*12+3].play()
+        elif key == 'g':
+            notes[5*12+5].play()
+        elif key == 'h':
+            notes[5*12+7].play()
+        #elif ord(key) == 27:
+            #quit somehow
 
     def _released(self, event):
         self.pressed[event.char] = False
@@ -115,27 +137,3 @@ class QwertonicKeyboard:
 if __name__ == "__main__":
     qk = QwertonicKeyboard()
     qk.start()
-
-#   # pyo loop
-#   key=' '
-#   while ord(key) <> 27:
-#       key = getch()
-#       print key,
-#       try:
-#           note = key_mapping[key]
-#       except KeyError:
-#           pass
-#       else:
-#           note.play()
-#       if key == 'a':
-#           notes[4*12+9].play()
-#       elif key == 's':
-#           notes[4*12+11].play()
-#       elif key == 'd':
-#           notes[5*12+1].play()
-#       elif key == 'f':
-#           notes[5*12+3].play()
-#       elif key == 'g':
-#           notes[5*12+5].play()
-#       elif key == 'h':
-#           notes[5*12+7].play()

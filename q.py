@@ -86,7 +86,7 @@ class QwertonicKeyboard:
         self.root = Tk()
         self.playlabel = Label(text="press keys to play notes",
                              anchor="w")
-        self.canvas = Canvas(width=640, height=480)
+        self.canvas = Canvas(width=568, height=340)
 
         self.playlabel.pack(side="top", fill="x")
         self.canvas.pack(side="top", fill="both", expand="true")
@@ -98,7 +98,7 @@ class QwertonicKeyboard:
         self.root.after(10, self._animate)
 
     def _set_bindings(self):
-        for char in ["w","s","o", "l"]:
+        for char in key_mapping:
             self.root.bind("<KeyPress-%s>" % char, self._pressed)
             self.root.bind("<KeyRelease-%s>" % char, self._released)
             self.pressed[char] = False

@@ -3,18 +3,17 @@
 # qwertonic-py
 # a prototype implementation of the qwertonic keyboard
 # (http://www.qwertonic.com/)
-# ver 0.1
+# version 0.2dev
 #
 # requires pyo
 # https://code.google.com/p/pyo/
 #
-# files: qwertonic.py (this file), music.py, getch.py
+# files: qwertonic.py (this file), music.py
 
+from Tkinter import *
 from music import *
 import time
-from getch import getch
 
-print "qwertonic-py"
 s = musicServer()
 time.sleep(0.5)
 startServer(s)
@@ -70,37 +69,53 @@ key_mapping.update(make_key_mapping(['q','w','e','r','t','y','u','i','o','p','['
 key_mapping.update(make_key_mapping(['1','2','3','4','5','6','7','8','9','0','-','='],
               5*12+7))
 
-# play welcome tones
-# (Sun's Song from Legend of Zelda)
-time.sleep(1)
-print "press keyboard keys to play music"
-print "press escape to quit"
-notes[5*12+9].play(); time.sleep(.2)
-notes[5*12+5].play(); time.sleep(.2)
-notes[6*12+2].play(); time.sleep(0.8)
-notes[5*12+9].play(); time.sleep(.2)
-notes[5*12+5].play(); time.sleep(.2)
-notes[6*12+2].play(); time.sleep(0.8)
-notes[5*12+9].play(); time.sleep(0.1)
-notes[6*12+0].play(); time.sleep(0.1)
-notes[6*12+2].play(); time.sleep(0.1)
-notes[6*12+4].play(); time.sleep(0.1)
-notes[6*12+5].play(); time.sleep(0.1)
-notes[6*12+7].play(); time.sleep(0.2)
-notes[6*12+7].play(); time.sleep(0.2)
-notes[6*12+7].play(); time.sleep(0.2)
-notes[6*12+7].play(); time.sleep(0.2)
-notes[6*12+7].play(); time.sleep(0.2)
-notes[6*12+7].play(); time.sleep(0.2)
+# tkinter loop
+# adapted from http://stackoverflow.com/questions/2138518/python-bind-allow-multiple-keys-to-be-pressed-simultaniously
+class QwertonicKeyboard:
+    def __init__(self):
+        # keys currently pressed (as characters, per Tkinter)
+        self.pressed = {}
 
-# main loop
-key=' '
-while ord(key) <> 27:
-    key = getch()
-    print key,
-    try:
-        note = key_mapping[key]
-    except KeyError:
-        pass
-    else:
-        note.play()
+        self._create_ui()
+
+    def start(self):
+        self._animate()
+        self.root.mainloop()
+
+    def _create_ui(self):
+        self.root = Tk()
+        self.playlabel = Label(text="press keys to play notes",
+                             anchor="w")
+        self.canvas = Canvas(width=568, height=340)
+
+        self.playlabel.pack(side="top", fill="x")
+        self.canvas.pack(side="top", fill="both", expand="true")
+
+        self._set_bindings()
+
+
+    def _animate(self):
+        self.root.after(10, self._animate)
+
+    def _set_bindings(self):
+        for char in key_mapping:
+            self.root.bind("<KeyPress-%s>" % char, self._pressed)
+            self.root.bind("<KeyRelease-%s>" % char, self._released)
+            self.pressed[char] = False
+
+    def _pressed(self, event):
+        self.pressed[event.char] = True
+        key = event.char
+        try:
+            note = key_mapping[key]
+        except KeyError:
+            pass
+        else:
+            note.play()
+
+    def _released(self, event):
+        self.pressed[event.char] = False
+
+if __name__ == "__main__":
+    qk = QwertonicKeyboard()
+    qk.start()

@@ -104,15 +104,3 @@ while ord(key) <> 27:
         pass
     else:
         note.play()
-    if key == 'a':
-        notes[4*12+9].play()
-    elif key == 's':
-        notes[4*12+11].play()
-    elif key == 'd':
-        notes[5*12+1].play()
-    elif key == 'f':
-        notes[5*12+3].play()
-    elif key == 'g':
-        notes[5*12+5].play()
-    elif key == 'h':
-        notes[5*12+7].play()

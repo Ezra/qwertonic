@@ -86,16 +86,13 @@ class QwertonicKeyboard:
         self.root = Tk()
         self.playlabel = Label(text="press keys to play notes",
                              anchor="w")
-        self.quitlabel = Label(text="press esc to quit",
-                             anchor="w")
-        self.canvas = Canvas(width=440, height=440)
-        self.canvas.config(scrollregion=(-20, -20, 420, 420))
+        self.canvas = Canvas(width=640, height=480)
 
         self.playlabel.pack(side="top", fill="x")
-        self.quitlabel.pack(side="top", fill="x")
         self.canvas.pack(side="top", fill="both", expand="true")
 
         self._set_bindings()
+
 
     def _animate(self):
         self.root.after(10, self._animate)
@@ -109,27 +106,12 @@ class QwertonicKeyboard:
     def _pressed(self, event):
         self.pressed[event.char] = True
         key = event.char
-        print key,
         try:
             note = key_mapping[key]
         except KeyError:
             pass
         else:
             note.play()
-        if key == 'a':
-            notes[4*12+9].play()
-        elif key == 's':
-            notes[4*12+11].play()
-        elif key == 'd':
-            notes[5*12+1].play()
-        elif key == 'f':
-            notes[5*12+3].play()
-        elif key == 'g':
-            notes[5*12+5].play()
-        elif key == 'h':
-            notes[5*12+7].play()
-        #elif ord(key) == 27:
-            #quit somehow
 
     def _released(self, event):
         self.pressed[event.char] = False

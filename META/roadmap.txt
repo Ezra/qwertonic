@@ -8,13 +8,15 @@ todo:
 ✓ set up playing a note
 ✓ map some keys to notes
 ✓ make map be Qwertonic
-☐ make key holds be right
+> make key holds be right 
 ✓ print something
 
 ☐ 0.1 release to Qwertonic guy
 
-☐ put up a token window (that's not the pyo builtin)
-☐ wrap in a xplatform gui toolkit?
+☐ make key holds be right 
+✓ put up a token window (that's not the pyo builtin)
+✓ wrap in a xplatform gui toolkit?
+☐ less searing sound wave
 ☐ show what keys exist
 ☐ static help/about page
 ☐ fix bug?

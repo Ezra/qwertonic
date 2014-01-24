@@ -1,5 +1,0 @@
-yup got tired of C
-go go python!
-pyo does synth instead of midi, which should be excellent for Qwertonic purposes
-pyo is also actually working
-python also has actual time control

@@ -51,8 +51,8 @@ freqs = [16.35, 17.32, 18.35, 19.45, 20.60, 21.83, 23.12, 24.50, 25.96, 27.50, 2
 #  C C#  D Eb  E  F F#  G G#  A Bb  B
 #  0  1  2  3  4  5  6  7  8  9 10 11
 
-# dur=0: we'll specify the end
-notes = map((lambda frequency: note(frequency, dur=0)), freqs)
+# duration 0 means we'll specify the end with stop()
+notes = map((lambda frequency: note(frequency, duration=0)), freqs)
 
 # Return a map from key to note
 def make_key_mapping(key_list, start_note_num):
@@ -116,7 +116,7 @@ class QwertonicKeyboard:
                 note.play()
 
     def _released(self, event):
-        key = event.char
+        key = event.char # may not work for '<' or space
         if self.pressed[key]:
             self.pressed[event.char] = False
             key = event.char

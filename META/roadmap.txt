@@ -15,7 +15,7 @@ todo:
 
 ☐ make key holds be right {
     gain access to note controls √
-    use dur=0 and stop() of adsr envelope
+    use dur=0 and stop() of adsr envelope √
     get keyboard events
     then link em up
 }
@@ -28,7 +28,13 @@ todo:
     import keyboard image from pil
     fit window around image
 }
-☐ fix bug?
+☐ fix bug? {
+    helpful code fragment
+        self.text.pack()
+        self.text.insert('end', 'You pressed %s\n' % (event.char, ))
+    toString() is named repr() in python
+}
+
 ☐ static help/about file
 ☐ readme
 
@@ -51,7 +57,11 @@ todo:
 ☐ fix bug, you know there's at least one
 ☐ 1.0 release
 
-☐ tidy code
+☐ tidy code {
+    freqs formula?
+    refactor key_mapping
+    possibly refactor music.py away, or tweak its defaults
+}
 ☐ tidy repo?
 ☐ fix bug?
 ☐ 1.0.1 release

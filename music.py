@@ -32,6 +32,8 @@ class note(object):
         self.mod.setFreq(modulation)
         self.wave.setFreq(self.frequency+self.mod)
         self.envelope.play()
+    def stop(self):
+        self.envelope.stop()
     def setFrequency(self,frequency):
         '''sets the frequency of the note'''
         self.frequncy = frequency

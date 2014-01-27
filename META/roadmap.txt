@@ -14,7 +14,7 @@ todo:
 ✓ 0.1 release to Qwertonic guy
 
 ☐ make key holds be right {
-    gain access to note controls
+    gain access to note controls √
     use dur=0 and stop() of adsr envelope
     get keyboard events
     then link em up

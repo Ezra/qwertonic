@@ -2,7 +2,7 @@
 .redo/
 
 # separately source-controlled
-python/pyo/pyo-read-only
+examples/pyo/pyo-read-only
 
 # intermediate files
 *.pyc

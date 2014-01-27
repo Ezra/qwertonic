@@ -11,15 +11,25 @@ todo:
 > make key holds be right 
 ✓ print something
 
-☐ 0.1 release to Qwertonic guy
+✓ 0.1 release to Qwertonic guy
 
-☐ make key holds be right 
+☐ make key holds be right {
+    gain access to note controls
+    use dur=0 and stop() of adsr envelope
+    get keyboard events
+    then link em up
+}
 ✓ put up a token window (that's not the pyo builtin)
 ✓ wrap in a xplatform gui toolkit?
-☐ less searing sound wave
-☐ show what keys exist
-☐ static help/about page
+☐ less searing sound wave {
+    ???
+}
+☐ show what keys exist {
+    import keyboard image from pil
+    fit window around image
+}
 ☐ fix bug?
+☐ static help/about file
 ☐ readme
 
 ☐ 0.2 release
@@ -31,6 +41,7 @@ todo:
 ☐ including minimal redo script "do"
 ☐ fix bug?
 ☐ test somewhere
+☐ docs in-app
 
 ☐ 0.3 release
 
@@ -50,6 +61,7 @@ todo:
 ☐ do we want register shifting with shift?
 ☐ do we want Fourier frequentogram view? pretty harmonics!
 ☐ do we want nonspecific visualizer?
+☐ do we want etc.
 
 ☐ feature release
 

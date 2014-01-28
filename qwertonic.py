@@ -106,7 +106,7 @@ class QwertonicKeyboard:
 
     def _pressed(self, event):
         key = event.char
-        if not self.pressed[key]:
+        if (key in self.pressed) and not (self.pressed[key]):
             self.pressed[key] = True
             try:
                 note = key_mapping[key]
@@ -117,7 +117,7 @@ class QwertonicKeyboard:
 
     def _released(self, event):
         key = event.char # may not work for '<' or space
-        if self.pressed[key]:
+        if (key in self.pressed) and (self.pressed[key]):
             self.pressed[event.char] = False
             key = event.char
             try:

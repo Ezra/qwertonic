@@ -117,7 +117,7 @@ class QwertonicKeyboard:
 
         self.canvas.pack(side="top", fill="both", expand="true")
 
-        img = Image.open('resources/qwertonic-illustration.gif')
+        img = Image.open('resources/qwertonic-illustration.bmp')
         self.root.geometry('%dx%d' % (img.size[0],img.size[1]))
         self.image = ImageTk.PhotoImage(img)
         label=Label(self.root, image=self.image)

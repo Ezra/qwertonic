@@ -103,19 +103,28 @@ class QwertonicKeyboard:
             self.root.bind("<KeyPress-%s>" % char, self._pressed)
             self.root.bind("<KeyRelease-%s>" % char, self._released)
             self.pressed[char] = False
+            self.afterId[char] = None
 
     def _pressed(self, event):
         key = event.char
-        if (key in self.pressed) and not (self.pressed[key]):
-            self.pressed[key] = True
-            try:
-                note = key_mapping[key]
-            except KeyError:
-                pass
-            else:
-                note.play()
+        if self.afterId != None:
+            self.after_cancel( self.afterId )
+            self.afterId = None
+        else:
+            if (key in self.pressed) and not (self.pressed[key]):
+                self.pressed[key] = True
+                try:
+                    note = key_mapping[key]
+                except KeyError:
+                    pass
+                else:
+                    note.play()
 
     def _released(self, event):
+        self.afterId = self.after_idle( self.process_release, event )
+    def process_release(self, event):
+        print 'key release %s' % event.time
+        self.afterId = None
         key = event.char # may not work for '<' or space
         if (key in self.pressed) and (self.pressed[key]):
             self.pressed[event.char] = False

@@ -2,7 +2,6 @@
 .redo/
 
 # separately source-controlled
-examples/Imaging-*/
 examples/pyo/pyo-read-only/
 
 # intermediate files

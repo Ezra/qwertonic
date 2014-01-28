@@ -8,7 +8,10 @@
 # requires pyo
 # https://code.google.com/p/pyo/
 #
-# files: qwertonic.py (this file), music.py
+# files:
+#   qwertonic.py (this file)
+#   music.py
+#   resources/qwertonic-illustration.gif
 
 
 # for gui and input

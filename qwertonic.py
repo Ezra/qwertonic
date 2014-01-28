@@ -13,6 +13,7 @@
 
 # for gui and input
 from Tkinter import *
+from PIL import ImageTk, Image
 
 # for pyo music server
 print "Qwertonic Keyboard version 0.2dev, with ", # can't suppress pyo output, so use it
@@ -22,7 +23,6 @@ import time
 # for logging
 import logging as log
 import argparse
-
 
 #logging
 parser = argparse.ArgumentParser(description="play music with qwerty keyboard")
@@ -109,17 +109,20 @@ class QwertonicKeyboard:
         self._create_ui()
 
     def start(self):
-        self._animate()
         self.root.mainloop()
 
     def _create_ui(self):
         self.root = Tk()
-        self.playlabel = Label(text="press keys to play notes",
-                             anchor="w")
-        self.canvas = Canvas(width=568, height=340)
+        self.canvas = Canvas(self.root)
 
-        self.playlabel.pack(side="top", fill="x")
         self.canvas.pack(side="top", fill="both", expand="true")
+
+        img = Image.open('test.png')
+        self.root.geometry('%dx%d' % (img.size[0],img.size[1]))
+        self.image = ImageTk.PhotoImage(img)
+        label=Label(self.root, image=self.image)
+        label.place(x=0,y=0,width=img.size[0],height=img.size[1])
+        self.root.title("Qwertonic")
 
         self._set_bindings()
 

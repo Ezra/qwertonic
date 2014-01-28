@@ -10,10 +10,12 @@
 #
 # files: qwertonic.py (this file), music.py
 
-# for gui, input
+
+# for gui and input
 from Tkinter import *
 
-# for music server
+# for pyo music server
+print "Qwertonic Keyboard, with ", # can't suppress pyo output, so use it
 from music import *
 import time
 
@@ -22,6 +24,7 @@ import logging as log
 import argparse
 
 
+#logging
 parser = argparse.ArgumentParser(description="play music with qwerty keyboard")
 parser.add_argument("-v", "--verbosity", help="increase output verbosity",
         action="count", default=0)
@@ -38,6 +41,7 @@ elif args.verbosity == 1:
 else:
     log.basicConfig(format="%(levelname)s: %(message)s")
 
+#start server
 s = musicServer()
 time.sleep(0.5)
 startServer(s)

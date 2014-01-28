@@ -10,9 +10,33 @@
 #
 # files: qwertonic.py (this file), music.py
 
+# for gui, input
 from Tkinter import *
+
+# for music server
 from music import *
 import time
+
+# for logging
+import logging as log
+import argparse
+
+
+parser = argparse.ArgumentParser(description="play music with qwerty keyboard")
+parser.add_argument("-v", "--verbosity", help="increase output verbosity",
+        action="count", default=0)
+args = parser.parse_args()    
+
+if args.verbosity >= 2:
+    log.basicConfig(level=log.DEBUG,
+            format="%(asctime)s: %(message)s")
+    log.info("Qwertonic vverbose event output")
+elif args.verbosity == 1:
+    log.basicConfig(level=log.INFO,
+            format="%(msecs)03d: %(message)s")
+    log.info("Qwertonic event output milliseconds")
+else:
+    log.basicConfig(format="%(levelname)s: %(message)s")
 
 s = musicServer()
 time.sleep(0.5)
@@ -108,12 +132,12 @@ class QwertonicKeyboard:
 
     def _pressed(self, event):
         key = event.char
-        #print '%(key)r tried press at %(time)s' % {"key":key, "time":event.time}
+        log.debug('%r press?' % key)
         if (key in self.afterId) and (self.afterId[key] != None):
             self.root.after_cancel( self.afterId[key] )
             self.afterId[key] = None
         else:
-            print '%(key)r pressed at %(time)s' % {"key":key, "time":event.time}
+            log.info('%r pressed' % key)
             if (key in self.pressed) and not (self.pressed[key]):
                 self.pressed[key] = True
                 try:
@@ -125,12 +149,12 @@ class QwertonicKeyboard:
 
     def _released(self, event):
         key = event.char
-        #print '%(key)r tried release at %(time)s' % {"key":key, "time":event.time}
+        log.debug('%r release?' % key)
         if (key in self.afterId):
             self.afterId[key] = self.root.after_idle( self.process_release, event )
     def process_release(self, event):
         key = event.char
-        print '%(key)r released at %(time)s' % {"key":key, "time":event.time}
+        log.info('%r released' % key)
         if (key in self.pressed) and (self.pressed[key]):
             self.pressed[event.char] = False
             key = event.char

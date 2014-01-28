@@ -14,33 +14,30 @@ todo:
 ✓ 0.1 release to Qwertonic guy
 
 ✓ make key holds be right {
-    ✓ gain access to note controls √
-    ✓ use dur=0 and stop() of adsr envelope √
+    ✓ gain access to note controls
+    ✓ use dur=0 and stop() of adsr envelope
     ✓ get keyboard events
     ✓ then link em up
     ✓ debounce
 }
 ✓ put up a token window (that's not the pyo builtin)
 ✓ wrap in a xplatform gui toolkit?
-☐ less searing sound wave {
-    ???
+> less searing sound wave {
+    only matters for long notes
 }
 ☐ show what keys exist {
     import keyboard image from pil
     fit window around image
+    note: self.text.pack()
 }
-☐ fix bug? {
-    helpful code fragments
-        self.text.pack()
-        self.text.insert('end', 'You pressed %s\n' % (event.char, ))
-    toString() is named repr() in python
-}
+☐ fix bug?
 
 ☐ static help/about file
 ☐ readme
 
 ☐ 0.2 release
 
+☐ better sound wave for long notes (a la pianoforte)
 ☐ tidy do scripts
 ☐ shebang do scripts
 ☐ github

@@ -108,7 +108,7 @@ class QwertonicKeyboard:
 
     def _pressed(self, event):
         key = event.char
-        if self.afterId[key] != None:
+        if (key in self.afterId) and (self.afterId[key] != None):
             self.root.after_cancel( self.afterId[key] )
             self.afterId[key] = None
         else:
@@ -122,10 +122,11 @@ class QwertonicKeyboard:
                     note.play()
 
     def _released(self, event):
-        key = event.char # may not work for '<' or space
-        self.afterId[key] = self.root.after_idle( self.process_release, event )
+        key = event.char
+        if (key in self.afterId):
+            self.afterId[key] = self.root.after_idle( self.process_release, event )
     def process_release(self, event):
-        key = event.char # may not work for '<' or space
+        key = event.char
         if (key in self.pressed) and (self.pressed[key]):
             self.pressed[event.char] = False
             key = event.char

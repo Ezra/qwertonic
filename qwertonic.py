@@ -99,17 +99,18 @@ class QwertonicKeyboard:
         self.root.after(10, self._animate)
 
     def _set_bindings(self):
-        for char in key_mapping:
-            self.root.bind("<KeyPress-%s>" % char, self._pressed)
-            self.root.bind("<KeyRelease-%s>" % char, self._released)
-            self.pressed[char] = False
-            self.afterId[char] = None
+        self.afterId = {}
+        for key in key_mapping:
+            self.root.bind("<KeyPress-%s>" % key, self._pressed)
+            self.root.bind("<KeyRelease-%s>" % key, self._released)
+            self.pressed[key] = False
+            self.afterId[key] = None
 
     def _pressed(self, event):
         key = event.char
-        if self.afterId != None:
-            self.after_cancel( self.afterId )
-            self.afterId = None
+        if self.afterId[key] != None:
+            self.root.after_cancel( self.afterId[key] )
+            self.afterId[key] = None
         else:
             if (key in self.pressed) and not (self.pressed[key]):
                 self.pressed[key] = True
@@ -121,10 +122,9 @@ class QwertonicKeyboard:
                     note.play()
 
     def _released(self, event):
-        self.afterId = self.after_idle( self.process_release, event )
+        key = event.char # may not work for '<' or space
+        self.afterId[key] = self.root.after_idle( self.process_release, event )
     def process_release(self, event):
-        print 'key release %s' % event.time
-        self.afterId = None
         key = event.char # may not work for '<' or space
         if (key in self.pressed) and (self.pressed[key]):
             self.pressed[event.char] = False
@@ -135,6 +135,7 @@ class QwertonicKeyboard:
                 pass
             else:
                 note.stop()
+        self.afterId[key] = None
 
 
 if __name__ == "__main__":

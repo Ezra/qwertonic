@@ -29,7 +29,7 @@ todo:
     fit window around image
 }
 ☐ fix bug? {
-    helpful code fragment
+    helpful code fragments
         self.text.pack()
         self.text.insert('end', 'You pressed %s\n' % (event.char, ))
     toString() is named repr() in python

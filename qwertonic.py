@@ -76,6 +76,7 @@ class QwertonicKeyboard:
     def __init__(self):
         # keys currently pressed (as characters, per Tkinter)
         self.pressed = {}
+        self.afterId = {}
 
         self._create_ui()
 
@@ -99,7 +100,6 @@ class QwertonicKeyboard:
         self.root.after(10, self._animate)
 
     def _set_bindings(self):
-        self.afterId = {}
         for key in key_mapping:
             self.root.bind("<KeyPress-%s>" % key, self._pressed)
             self.root.bind("<KeyRelease-%s>" % key, self._released)

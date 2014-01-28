@@ -3,7 +3,7 @@
 # qwertonic-py
 # a prototype implementation of the qwertonic keyboard
 # (http://www.qwertonic.com/)
-# version 0.2dev
+# version 0.2
 #
 # requires pyo
 # https://code.google.com/p/pyo/
@@ -13,10 +13,9 @@
 
 # for gui and input
 from Tkinter import *
-from PIL import ImageTk, Image
 
 # for pyo music server
-print "Qwertonic Keyboard version 0.2dev, with ", # can't suppress pyo output, so use it
+print "Qwertonic Keyboard version 0.2, with ", # can't suppress pyo output, so use it
 from music import *
 import time
 
@@ -117,10 +116,8 @@ class QwertonicKeyboard:
 
         self.canvas.pack(side="top", fill="both", expand="true")
 
-        self.image = ImageTk.PhotoImage(file='resources/qwertonic-illustration.gif')
+        self.image = PhotoImage(file='resources/qwertonic-illustration.gif')
         self.root.geometry('%dx%d' % (self.image.width(),self.image.height()))
-        print self.image.width()
-        print self.image.height()
         label=Label(self.root, image=self.image)
         label.place(x=0,y=0,width=self.image.width(),height=self.image.height())
         self.root.title("Qwertonic")

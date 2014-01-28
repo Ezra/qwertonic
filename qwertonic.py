@@ -15,7 +15,7 @@
 from Tkinter import *
 
 # for pyo music server
-print "Qwertonic Keyboard, with ", # can't suppress pyo output, so use it
+print "Qwertonic Keyboard version 0.2dev, with ", # can't suppress pyo output, so use it
 from music import *
 import time
 

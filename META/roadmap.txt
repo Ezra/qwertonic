@@ -25,14 +25,14 @@ todo:
 > less searing sound wave {
     only matters for long notes
 }
-☐ show what keys exist {
+✓ show what keys exist {
     import keyboard image from pil
     fit window around image
     note: self.text.pack()
 }
-☐ fix bug?
 ✓ static help/about file (did this with -h)
 ☐ readme
+☐ fix bug?
 
 ☐ 0.2 release
 

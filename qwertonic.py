@@ -108,10 +108,12 @@ class QwertonicKeyboard:
 
     def _pressed(self, event):
         key = event.char
+        #print '%(key)r tried press at %(time)s' % {"key":key, "time":event.time}
         if (key in self.afterId) and (self.afterId[key] != None):
             self.root.after_cancel( self.afterId[key] )
             self.afterId[key] = None
         else:
+            print '%(key)r pressed at %(time)s' % {"key":key, "time":event.time}
             if (key in self.pressed) and not (self.pressed[key]):
                 self.pressed[key] = True
                 try:
@@ -123,10 +125,12 @@ class QwertonicKeyboard:
 
     def _released(self, event):
         key = event.char
+        #print '%(key)r tried release at %(time)s' % {"key":key, "time":event.time}
         if (key in self.afterId):
             self.afterId[key] = self.root.after_idle( self.process_release, event )
     def process_release(self, event):
         key = event.char
+        print '%(key)r released at %(time)s' % {"key":key, "time":event.time}
         if (key in self.pressed) and (self.pressed[key]):
             self.pressed[event.char] = False
             key = event.char

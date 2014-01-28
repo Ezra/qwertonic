@@ -31,10 +31,12 @@ todo:
     note: self.text.pack()
 }
 ✓ static help/about file (did this with -h)
-☐ readme
-☐ fix bug?
+✓ readme
 
-☐ 0.2 release
+☐ 0.2 release {
+    ✓ finished
+    ☐ let folks know?
+}
 
 ☐ better sound wave for long notes (a la pianoforte)
 ☐ tidy do scripts

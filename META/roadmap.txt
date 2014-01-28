@@ -31,8 +31,7 @@ todo:
     note: self.text.pack()
 }
 ☐ fix bug?
-
-☐ static help/about file
+✓ static help/about file (did this with -h)
 ☐ readme
 
 ☐ 0.2 release
